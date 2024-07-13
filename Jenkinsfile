@@ -50,5 +50,14 @@ pipeline {
                 }
             }
         }
+        stage('list of resources'){
+            steps{
+                script{
+                    dir('EKS'){
+                         sh 'terraform state list'
+                    }
+                }
+            }
+        }
     }
 }
